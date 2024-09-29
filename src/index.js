@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import reportWebVitals from './reportWebVitals'
-import TodoForm from 'layouts/TodoForm/todo-form'
+import TodoForm from 'layouts/TodoForm'
 import 'normalize.css'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))

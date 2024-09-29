@@ -1,7 +1,7 @@
-import AppHeader from 'components/Header/app-header'
-import SearchPanel from 'components/SearchPanel/search-panel'
-import TodoList from 'components/TodoList/todo-list'
-import ItemStatusFilter from 'components/StatusFilter/item-status-filter'
+import AppHeader from 'components/Header'
+import SearchPanel from 'components/SearchPanel'
+import TodoList from 'components/TodoList'
+import ItemStatusFilter from 'components/StatusFilter'
 import './todo-form.css'
 
 const TodoForm = () => {

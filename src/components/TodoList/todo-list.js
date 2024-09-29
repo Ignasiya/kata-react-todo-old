@@ -1,4 +1,4 @@
-import TodoListItem from 'components/TodoListItem/todo-list-item'
+import TodoListItem from 'components/TodoListItem'
 import './todo-list.css'
 
 const TodoList = ({ items, children }) => {
