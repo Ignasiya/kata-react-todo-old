@@ -1,21 +1,30 @@
-import React from "react";
-import AppHeader from "components/Header/app-header";
-import SearchPanel from "components/SearchPanel/search-panel";
-import TodoList from "components/TodoList/todo-list";
+import AppHeader from 'components/Header/app-header'
+import SearchPanel from 'components/SearchPanel/search-panel'
+import TodoList from 'components/TodoList/todo-list'
+import ItemStatusFilter from 'components/StatusFilter/item-status-filter'
+import './todo-form.css'
 
 const TodoForm = () => {
-  const isLoggedIn = false;
-  const loginBox = <span>Log in please</span>;
-  const welcomeBox = <span>Welcome Back</span>;
+  const todoData = [
+    { id: 1, label: 'Buy milk', important: true },
+    { id: 2, label: 'Clean the house', important: false },
+    { id: 3, label: 'Cook dinner', important: true },
+    { id: 4, label: 'Buy groceries', important: false }
+  ]
 
   return (
-    <div>
-      {isLoggedIn ? welcomeBox : loginBox}
-      <AppHeader />
-      <SearchPanel />
-      <TodoList />
-    </div>
-  );
-};
+    <div className='todo-app'>
+      <AppHeader todo={1} done={3} />
+      <div className='top-panel d-flex'>
+        <SearchPanel />
+        <ItemStatusFilter />
+      </div>
 
-export default TodoForm;
+      <TodoList items={todoData}>
+        <h3>Header</h3>
+      </TodoList>
+    </div>
+  )
+}
+
+export default TodoForm

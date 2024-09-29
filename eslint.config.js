@@ -6,7 +6,7 @@ import prettierPlugin from 'eslint-plugin-prettier'
 
 export default [
   {
-    extends: ['react-app', 'eslint:recommended'],
+    extends: ['react-app', 'react-app/jest', 'eslint:recommended', 'eslint-config-prettier'],
     plugins: {
       react: eslintReact,
       prettier: prettierPlugin
