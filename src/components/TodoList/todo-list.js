@@ -1,7 +1,7 @@
 import TodoListItem from 'components/TodoListItem'
 import './todo-list.css'
 
-const TodoList = ({ items, children }) => {
+const TodoList = ({ items, onDeleted, children }) => {
   return (
     <ul className='list-group todo-list'>
       {children}
@@ -10,7 +10,7 @@ const TodoList = ({ items, children }) => {
 
         return (
           <li className='list-group-item' key={id}>
-            <TodoListItem {...todo} />
+            <TodoListItem {...todo} onDeleted={() => onDeleted(id)} />
           </li>
         )
       })}
