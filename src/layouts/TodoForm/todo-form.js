@@ -3,6 +3,7 @@ import AppHeader from 'components/Header'
 import SearchPanel from 'components/SearchPanel'
 import TodoList from 'components/TodoList'
 import ItemStatusFilter from 'components/StatusFilter'
+import ItemAddForm from 'components/AddForm'
 import './todo-form.css'
 
 export default class TodoForm extends Component {
@@ -15,9 +16,23 @@ export default class TodoForm extends Component {
     ]
   }
 
+  maxId = this.state.todoData.length + 1
+
   onDeleted = id => {
     this.setState(({ todoData }) => ({
       todoData: todoData.filter(item => item.id !== id)
+    }))
+  }
+
+  onItemAdded = text => {
+    const newItem = {
+      id: this.maxId++,
+      label: text,
+      important: false
+    }
+
+    this.setState(({ todoData }) => ({
+      todoData: [...todoData, newItem]
     }))
   }
 
@@ -33,6 +48,8 @@ export default class TodoForm extends Component {
         <TodoList items={this.state.todoData} onDeleted={this.onDeleted}>
           <h3>Header</h3>
         </TodoList>
+
+        <ItemAddForm onItemAdded={this.onItemAdded} />
       </div>
     )
   }
